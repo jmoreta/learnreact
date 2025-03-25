@@ -1,7 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
+import {App} from './App.jsx'
+import  './Index.css'
 
 const root = createRoot(document.getElementById('root'));
 
-root.render("Hola Mundo");
+
+root.render(
+
+    <App />
+
+    
+);
