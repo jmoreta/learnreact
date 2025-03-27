@@ -3,19 +3,25 @@ import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 
 export function App() {
 
-    return (
+  return (
 
-      <div className='App'>
-            <TwitterFollowCard userName="elonmusk" name="Elon Musk" />
-            <TwitterFollowCard userName="admiral_sports" name="Admiral Sports" />
-            <TwitterFollowCard userName="elonmusk" name="Elon Musk" />
-            <TwitterFollowCard userName="admiral_sports" name="Admiral Sports" />
-            <TwitterFollowCard userName="elonmusk" name="Elon Musk" />
-            <TwitterFollowCard userName="admiral_sports" name="Admiral Sports" />
+    <section className='App'>
 
-      </div>
-      
-    )
+
+      <TwitterFollowCard isFollowing={false} userName="admiral_sports">
+        Admiral Sports
+      </TwitterFollowCard>
+
+
+      <TwitterFollowCard isFollowing userName="midudev" >
+        Miguel Angel
+      </TwitterFollowCard>
+
+
+
+    </section>
+
+  )
 
 
 
