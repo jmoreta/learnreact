@@ -68,7 +68,18 @@ function App() {
     return null
   }
 
+  const resetGame = ()=>{
+    setBoard(Array(9).fill(null))
+    setTurn(TURNS.x)
+    setWinner(null)
 
+  }
+
+  const checkEndGame = (newBoard)=> {
+
+    return newBoard.every((square)=>square !== null)
+
+  }
 
 
   const updateBoard = (index) => {
@@ -87,6 +98,10 @@ function App() {
     if(newWinner){
 
       setWinner(newWinner)
+    }else if (checkEndGame(newBoard))  {
+
+      setWinner(false)
+      
     }
 
   }
@@ -98,7 +113,7 @@ function App() {
 
     <main className='board'>
       <h1>Tic tac toe</h1>
-
+    <button onClick={resetGame}>Reset del juego</button>
       <section className='game'>
         {
 
@@ -145,15 +160,13 @@ function App() {
               </header>
 
               <footer>
-                <button>Empezar de nuevo</button>
+                <button onClick={resetGame}>Empezar de nuevo</button>
               </footer>
 
             </div>
           </section>
         )
         }
-
-
     </main>
 
 
