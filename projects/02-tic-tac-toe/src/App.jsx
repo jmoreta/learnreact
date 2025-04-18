@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import {  useState } from 'react'
 
 
 import {Square} from './components/Square.jsx'
@@ -17,6 +16,7 @@ function App() {
     return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)}
   )
 
+  
   
     
     
@@ -66,6 +66,9 @@ function App() {
       turn:newTurn
     })
 
+    
+    
+
     //revisar si hay ganador
     const newWinner = checkWinnerFrom(newBoard)
 
@@ -78,8 +81,11 @@ function App() {
       
     }
 
+    
+
   }
 
+  
 
 
 
