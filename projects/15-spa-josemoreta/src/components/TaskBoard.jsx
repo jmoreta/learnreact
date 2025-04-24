@@ -21,30 +21,32 @@ export function TaskBoard ({headings,todo}) {
       </section>
 
       <section className='taskList'>
-        <section>
-            {todo.map((task) => {
-              return(
+       
+              {todo.map((task) => {
+                  
+                  return (
 
-                task.status === 0 ? <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status}/> :''  
-              )
-            })}
-      </section>
+       <>              
         <section>
-          {todo.map((task) => {
-            return (
-
-              task.status === 1 ? <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status} /> : ''
-            )
-          })}
+            {task.status === 0 && <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status} />}
+            
         </section>
-        <section>
-          {todo.map((task) => {
-            return (
+         
+         <section>
 
-              task.status === 2 ? <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status} /> : ''
-            )
-          })}
+          {task.status === 1 && <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status} /> }
+         
         </section>
+
+        <section>
+
+         {task.status === 2 && <Task key={task.id} description={task.description} date={task.createdAt} newStatus={task.status} /> }
+
+        </section>            
+    </>
+    
+  )})        
+               }
       </section>
     </main>
 
